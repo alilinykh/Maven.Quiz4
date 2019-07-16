@@ -17,16 +17,15 @@ public class Food {
         return list;
     }
 
-    public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
+    public Map < Class<? extends Spice>, Integer> getSpiceCount() {
 
-//        for (Spice s : list
-//        ) {
-//            if (!map.containsKey(s)) {map.putIfAbsent((s,1);
-//            }
-//            else map.put(s ,map.get(s)+1);
-//        }
-        return (Map<SpiceType, Integer>) map;
-//            return null;
+        for (Spice s : list
+        ) {
+            if (!map.containsKey(s.getClass())) {map.putIfAbsent(s.getClass(),1);
+            }
+            else map.put(s.getClass(), map.get(s.getClass())+1);
+        }
+        return map;
     }
 
     public void applySpice(Spice spice) {

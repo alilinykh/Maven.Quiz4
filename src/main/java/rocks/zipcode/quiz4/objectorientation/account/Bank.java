@@ -7,20 +7,19 @@ import java.util.List;
  * @author leon on 27/12/2018.
  */
 public class Bank {
-    List<BankAccount> list = new ArrayList<>();
-    public BankAccount removeBankAccountByIndex(Integer indexNumber) {
-        return list.get(indexNumber);
+    List<BankAccount> bankAccounts = new ArrayList<>();
+    public void removeBankAccountByIndex(Integer indexNumber) {
+            bankAccounts.remove(bankAccounts.get(indexNumber));
     }
 
     public void addBankAccount(BankAccount bankAccount) {
-        list.add(new BankAccount());
+        bankAccounts.add(bankAccount);
     }
 
     public Boolean containsBankAccount(BankAccount bankAccount) {
 //        throw new UnsupportedOperationException("Method not yet implemented");
-        if (list.contains(bankAccount)) {
-            return true;
-        }
-        return false;
+        if (bankAccounts.contains(bankAccount)) {return true;}
+        else return false;
+
     }
 }
